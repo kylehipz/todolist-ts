@@ -13,7 +13,7 @@ CREATE TABLE users (
   picture VARCHAR
 );
 
-INSERT INTO users VALUES (gen_random_uuid(), )
+INSERT INTO users VALUES (gen_random_uuid(), 'kylehipolito2109@gmail.com', 'Kyle Hipolito', 'https://lh3.googleusercontent.com/a/ACg8ocKMOME0YEYO6x0Dk-G0EaV8PhtQMg8DWJYTUcH1PND8czU=s96-c');
 
 INSERT INTO todo VALUES (gen_random_uuid(), 'Answer interview examination', false, now()::date, 'kylehipolito2109@gmail.com');
 INSERT INTO todo VALUES (gen_random_uuid(), 'Water the plants', true, now()::date, 'kylehipolito2109@gmail.com');
