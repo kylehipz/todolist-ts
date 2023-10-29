@@ -6,7 +6,8 @@ const {
   DB_PASSWORD,
   DB_HOST,
   DB_NAME,
-  DB_USER
+  DB_USER,
+  DB_PORT
 } = process.env
 
 const config: PoolConfig = {
@@ -14,7 +15,8 @@ const config: PoolConfig = {
   user: DB_USER,
   password: DB_PASSWORD,
   database: DB_NAME,
-  ssl: false
+  ssl: false,
+  port: DB_PORT
 }
 
 export const makePgPool = () => {

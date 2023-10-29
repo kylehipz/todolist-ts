@@ -12,7 +12,7 @@ export class TodoPostgresDb implements TodoDB {
     const query = `
       SELECT t.*, u.name user_name, u.picture user_picture from todo t
       LEFT JOIN users u ON t.created_by = u.email
-      ORDER BY t.due_date, t.content
+      ORDER BY t.due_date, t.content, u.name
     `
 
     const { rows: todos } = await this.pool.query<RemoteTodo>(query)

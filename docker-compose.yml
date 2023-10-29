@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  todolist-server:
+    build:
+      context: ./
+    container_name: todolist-server
+    env_file:
+      - ./server/.env
+    ports:
+      - 8000:8000
+
+  todolist-db:
+    image: postgres:14-alpine
+    container_name: todolist-db
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_DB: todolist
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    volumes:
+      - todolist-db-volume-prod:/var/lib/postgresql/data
+      - ./data:/docker-entrypoint-initdb.d
+
+volumes:
+  todolist-db-volume-prod:
