@@ -6,7 +6,7 @@ services:
       context: ./
     container_name: todolist-server
     env_file:
-      - ./server/.env
+      - ./server/.env.prod
     ports:
       - 8000:8000
 
