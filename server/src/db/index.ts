@@ -1,6 +1,6 @@
-import { makePgPool } from '../config'
-import { TodoPostgresDb } from './todo-db'
-import { UserPostgresDB } from './user-db'
+import { makePgPool } from '@config'
+import { TodoPostgresDb } from './todo.db'
+import { UserPostgresDB } from './user.db'
 
 const pool = makePgPool()
 

@@ -11,7 +11,7 @@ build:
 	docker build -t kylehipolito/todolist:latest .
 
 prod:
-	docker-compose-up
+	docker-compose up
 
 prod-clean:
 	docker-compose down

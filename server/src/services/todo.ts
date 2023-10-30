@@ -21,6 +21,16 @@ export class TodoListService {
     return await this.todoDb.add(validatedTodo)
   }
 
+  async getTodoById (id: string) {
+    const todo = await this.todoDb.getById(id)
+
+    if (todo === null) {
+      throw new NotFoundError('Todo not found')
+    }
+
+    return todo
+  }
+
   async updateTodo (id: string, todo: Todo) {
     const existingTodo = await this.todoDb.getById(id)
 
