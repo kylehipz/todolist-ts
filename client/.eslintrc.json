@@ -20,6 +20,7 @@
       "@typescript-eslint/naming-convention": "off",
       "@typescript-eslint/consistent-type-imports": "off",
       "@typescript-eslint/no-floating-promises": "off",
+      "@typescript-eslint/triple-slash-reference": "off",
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off"
     }
