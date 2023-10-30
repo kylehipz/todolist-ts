@@ -43,11 +43,17 @@ DB_PASSWORD=xxxx # Database password
 DB_NAME=xxxx # Database name
 DB_PORT=xxxx # Database port
 ```
+You also need to run the `init.sql` in the `data` directory to the database
+```sql
+CREATE TABLE todo(...
+```
 
 ## Tests
 ### Frontend:
+Run `npm test` in the `client` directory
 ![image](https://github.com/kylehipz/todolist-ts/assets/31435847/90bc96d3-9cf0-4626-a9d7-6e605b6c2597)
 
 ### Backend:
+Run `npm test` in the `server` directory
 ![image](https://github.com/kylehipz/todolist-ts/assets/31435847/55138667-f636-49b3-bb28-fb87202b63f1)
 
