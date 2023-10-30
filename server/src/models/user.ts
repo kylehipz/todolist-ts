@@ -1,7 +1,8 @@
 import z from 'zod'
 import { Model } from './model'
 
-const userSchema = z.object({
+export const userSchema = z.object({
+  id: z.string().uuid().optional(),
   name: z.string(),
   email: z.string().email(),
   picture: z.string().nullable()

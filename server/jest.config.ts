@@ -25,7 +25,13 @@ const config: Config.InitialOptions = {
     '^@routes/(.*)$': '<rootDir>/src/routes/$1',
     '^@services/(.*)$': '<rootDir>/src/services/$1',
     '^@stubs': '<rootDir>/stubs'
-  }
+  },
+  collectCoverageFrom: [
+    'src/**/services/**/*.{js,jsx,ts,tsx}',
+    'src/**/models/**/*.{js,jsx,ts,tsx}',
+    '!src/**/index.ts',
+    '!src/**/*.d.ts'
+  ]
 }
 
 export default config
