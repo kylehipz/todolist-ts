@@ -13,6 +13,7 @@ export const Login = () => {
         auto_select
         onSuccess={onLoginSuccess}
         onError={onLoginError}
+        useOneTap
       />
     </div>
   )
