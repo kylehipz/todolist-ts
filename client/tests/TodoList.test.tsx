@@ -19,7 +19,7 @@ describe('TodoList component', () => {
   afterEach(() => { server.resetHandlers() })
   afterAll(() => { server.close() })
 
-  it('should display the list of todos', async () => {
+  it('Should find "Water the plants" task', async () => {
     render(
       <QueryClientProvider client={queryClient}>
         <TodoListContainer />
@@ -28,10 +28,37 @@ describe('TodoList component', () => {
 
     // @ts-expect-error Intellisense fix
     await waitFor(() => expect(screen.getByText(/Water the plants/)).toBeInTheDocument())
+  })
+
+  it('Should find "Read about microservices" task', async () => {
+    render(
+      <QueryClientProvider client={queryClient}>
+        <TodoListContainer />
+      </QueryClientProvider>
+    )
+
     // @ts-expect-error Intellisense fix
     await waitFor(() => expect(screen.getByText(/Read about microservices/)).toBeInTheDocument())
+  })
+
+  it('Should find "Study npm workspaces" task', async () => {
+    render(
+      <QueryClientProvider client={queryClient}>
+        <TodoListContainer />
+      </QueryClientProvider>
+    )
+
     // @ts-expect-error Intellisense fix
     await waitFor(() => expect(screen.getByText(/Study npm workspaces/)).toBeInTheDocument())
+  })
+
+  it('Should find "Study Golang" task', async () => {
+    render(
+      <QueryClientProvider client={queryClient}>
+        <TodoListContainer />
+      </QueryClientProvider>
+    )
+
     // @ts-expect-error Intellisense fix
     await waitFor(() => expect(screen.getByText(/Study Golang/)).toBeInTheDocument())
   })
