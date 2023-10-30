@@ -1,5 +1,4 @@
 import { List, Avatar, Checkbox, Tooltip } from 'antd'
-import { CheckboxChangeEvent } from 'antd/es/checkbox'
 import { EditButton, DeleteButton } from './ItemActions'
 import { TodoListItemContent } from './ItemContent'
 // * Hooks
@@ -14,15 +13,13 @@ interface Props {
 export const TodoListItem: React.FC<Props> = ({ item, onDeleteConfirm, onEditClick }) => {
   const { editTodo } = useTodoMutations(item.id)
 
-  const onChange = async (e: CheckboxChangeEvent) => {
-    const isChecked = e.target.checked
-
-    await editTodo({ ...item, completed: isChecked })
+  const onClick = async () => {
+    await editTodo({ ...item, completed: !item.completed })
   }
 
   return (
     <div className='flex items-center pl-5'>
-      <Checkbox defaultChecked={item.completed} onChange={onChange} />
+      <Checkbox checked={item.completed} onClick={onClick} />
       <List.Item
         className='w-full'
         actions={[
