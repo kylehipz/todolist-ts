@@ -19,7 +19,7 @@ describe('TodoList component', () => {
   afterEach(() => { server.resetHandlers() })
   afterAll(() => { server.close() })
 
-  it('Should find "Water the plants" task', async () => {
+  it('Should include "Water the plants" task', async () => {
     render(
       <QueryClientProvider client={queryClient}>
         <TodoListContainer />
@@ -30,7 +30,7 @@ describe('TodoList component', () => {
     await waitFor(() => expect(screen.getByText(/Water the plants/)).toBeInTheDocument())
   })
 
-  it('Should find "Read about microservices" task', async () => {
+  it('Should include "Read about microservices" task', async () => {
     render(
       <QueryClientProvider client={queryClient}>
         <TodoListContainer />
@@ -41,7 +41,7 @@ describe('TodoList component', () => {
     await waitFor(() => expect(screen.getByText(/Read about microservices/)).toBeInTheDocument())
   })
 
-  it('Should find "Study npm workspaces" task', async () => {
+  it('Should include "Study npm workspaces" task', async () => {
     render(
       <QueryClientProvider client={queryClient}>
         <TodoListContainer />
@@ -52,7 +52,7 @@ describe('TodoList component', () => {
     await waitFor(() => expect(screen.getByText(/Study npm workspaces/)).toBeInTheDocument())
   })
 
-  it('Should find "Study Golang" task', async () => {
+  it('Should include "Study Golang" task', async () => {
     render(
       <QueryClientProvider client={queryClient}>
         <TodoListContainer />
